@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chopp D'Casa - Cardápio Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#333535",
+                      "surface-bright": "#38393a",
+                      "primary": "#ffb4ac",
+                      "surface-container-lowest": "#0c0f0f",
+                      "on-tertiary-fixed": "#261a00",
+                      "secondary": "#c8c6c6",
+                      "inverse-primary": "#b52424",
+                      "outline-variant": "#5a403e",
+                      "surface-container-high": "#282a2b",
+                      "on-error": "#690005",
+                      "on-tertiary-container": "#ffcf66",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-secondary-container": "#b6b5b4",
+                      "surface-container-low": "#1a1c1c",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "tertiary-fixed-dim": "#fbbc00",
+                      "on-secondary": "#303030",
+                      "on-primary-fixed": "#410003",
+                      "on-surface": "#e2e2e2",
+                      "primary-fixed-dim": "#ffb4ac",
+                      "on-primary-container": "#ffc8c2",
+                      "background": "#121414",
+                      "surface": "#121414",
+                      "on-tertiary": "#402d00",
+                      "tertiary-fixed": "#ffdfa0",
+                      "surface-dim": "#121414",
+                      "inverse-on-surface": "#2f3131",
+                      "on-surface-variant": "#e2beba",
+                      "on-primary": "#690007",
+                      "on-background": "#e2e2e2",
+                      "surface-variant": "#333535",
+                      "primary-container": "#b22222",
+                      "inverse-surface": "#e2e2e2",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474747",
+                      "primary-fixed": "#ffdad6",
+                      "tertiary": "#fbbc00",
+                      "error-container": "#93000a",
+                      "on-primary-fixed-variant": "#92030f",
+                      "surface-container": "#1e2020",
+                      "outline": "#aa8986",
+                      "tertiary-container": "#775700",
+                      "surface-tint": "#ffb4ac",
+                      "secondary-fixed": "#e4e2e1",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#474747",
+                      "secondary-fixed-dim": "#c8c6c6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "gutter": "20px",
+                      "container-max": "1200px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "xl": "80px",
+                      "md": "24px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Domine"
+                      ],
+                      "display-lg": [
+                              "Domine"
+                      ],
+                      "label-lg": [
+                              "Work Sans"
+                      ],
+                      "label-md": [
+                              "Work Sans"
+                      ],
+                      "body-md": [
+                              "Work Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Domine"
+                      ],
+                      "headline-lg": [
+                              "Domine"
+                      ],
+                      "body-lg": [
+                              "Work Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .boteco-card {
+            background-color: theme('colors.surface-container-high');
+            border: 1px solid theme('colors.tertiary');
+            transition: all 0.3s ease;
+        }
+        
+        .boteco-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            border-color: theme('colors.primary-container');
+        }
+
+        .boteco-button {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.inverse-surface');
+            border-left: 4px solid theme('colors.tertiary');
+            transition: all 0.2s ease;
+        }
+
+        .boteco-button:hover {
+            background-color: theme('colors.on-primary-fixed-variant');
+        }
+        
+        .boteco-chip {
+            border: 1px solid theme('colors.tertiary');
+            color: theme('colors.on-surface');
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .boteco-chip:hover, .boteco-chip.active {
+            background-color: theme('colors.tertiary');
+            color: theme('colors.on-tertiary');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex flex-col items-center px-md py-sm max-w-container-max mx-auto bg-surface dark:bg-surface border-b-2 border-tertiary">
+<div class="flex items-center justify-between w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary dark:text-tertiary text-[28px]" style="font-variation-settings: 'FILL' 1;">sports_bar</span>
+<h1 class="font-display-lg text-headline-lg font-bold text-tertiary dark:text-tertiary uppercase tracking-tighter hidden md:block">Chopp D'Casa</h1>
+<h1 class="font-display-lg text-headline-lg-mobile font-bold text-tertiary dark:text-tertiary uppercase tracking-tighter md:hidden">Chopp D'Casa</h1>
+</div>
+<nav class="hidden md:flex gap-md items-center">
+<a class="font-label-lg text-label-lg text-tertiary hover:text-primary transition-colors flex items-center gap-2" href="#artesanal">
+<span class="material-symbols-outlined">liquor</span> Artesanal
+                </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#drinks">
+<span class="material-symbols-outlined">local_bar</span> Drinks
+                </a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2" href="#petiscos">
+<span class="material-symbols-outlined">kebab_dining</span> Petiscos
+                </a>
+</nav>
+<button aria-label="Info" class="text-tertiary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">info</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-md py-xl flex flex-col gap-xl">
+<!-- Hero / Info Section -->
+<section class="flex flex-col items-center text-center gap-md pb-lg border-b border-surface-variant">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-tertiary bg-surface-container-high flex items-center justify-center p-4">
+<img alt="Logo Chopp D'Casa" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X0W05SoXbQjWoqRD6L7KFbnfMyCg4DfzOuee0pfokiGAHUB7nqfoRk6MC0_PRxroTpSErY0S5GGwmy9BEFrWoc-a2wIYbe61CK0tQDJMQKpX-cm73rFEnkcdAUg6ldW8olLllgoWXMxv_NdHTQgU62UtDhQK8i5QYlSnn_ymK4NABSAmoR7o44ljFiukMX88hFbGRob3Rv7eCjNzu1I8icdmtJUrihziQ-FvDNd3QO4Rn1J3UbfJFQ3RE"/>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-on-surface bg-surface-container-high border border-tertiary px-3 py-1 rounded-full uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Aberto agora
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+                    Setor Centro Oeste, Goiânia (dentro do Posto Tassara Fama)
+                </p>
+<a class="font-label-lg text-label-lg text-tertiary hover:text-primary underline flex items-center gap-1 mt-2" href="#">
+                    Mais informações <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Menu Categories Filter (Desktop) -->
+<section class="hidden md:flex justify-center gap-md flex-wrap sticky top-[88px] z-40 bg-background/95 backdrop-blur-sm py-4">
+<button class="boteco-chip active font-label-lg text-label-lg px-6 py-2 rounded-full uppercase tracking-wider">Todos</button>
+<button class="boteco-chip font-label-lg text-label-lg px-6 py-2 rounded-full uppercase tracking-wider">Chopp Artesanal</button>
+<button class="boteco-chip font-label-lg text-label-lg px-6 py-2 rounded-full uppercase tracking-wider">Chopp de Vinho</button>
+<button class="boteco-chip font-label-lg text-label-lg px-6 py-2 rounded-full uppercase tracking-wider">Drinks</button>
+<button class="boteco-chip font-label-lg text-label-lg px-6 py-2 rounded-full uppercase tracking-wider">Petiscos</button>
+</section>
+<!-- Menu Grid -->
+<section class="w-full">
+<!-- Category: Artesanal -->
+<div class="mb-xl scroll-mt-[160px]" id="artesanal">
+<div class="flex items-center gap-4 mb-lg">
+<h2 class="font-headline-md text-headline-md text-tertiary uppercase tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_bar</span>
+                        Chopp Artesanal
+                    </h2>
+<div class="h-[1px] flex-grow bg-surface-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Item 1 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="Close up photography of a cold 300ml pilsner draft beer in a glass mug with condensation on the outside. Warm golden liquid with a thick, creamy white foam head. Placed on a dark wooden bar counter with dim, warm ambient lighting typical of a cozy pub. High quality, appetising." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLeQHJ6tuLnLBs_EDN6w_q3Us_P7t54fI9E2-v9fWvSS64QM1KXgzEpxRCEL2AOLLOJbTepp1rw0uPv4u19NNYW3IKZRhnpOCEeyWRkmCqURRkwLJUWvYLR9nPmXHii6v9JAyjAM1xBhdKQbaTbVF8zEK2gk1I5aAd-kafTpeW2VH1aaIdd3gtfEtpc2rdMFF6WVyOSrPMyZswu63sZMy7zaMrSJVWZFe0EC-cqXEuBm5VQnVZjRhd')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 8,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Chopp Pilsen 300ml</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Clássico, leve e refrescante. O verdadeiro sabor do happy hour.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="Close up photography of a dark stout or porter draft beer in a 300ml glass mug. Deep mahogany to black color with a tan, creamy foam head. Condensation on the glass. Placed on a dark wooden bar counter with dim, warm ambient lighting. Rich and malty appearance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT9e3olT3SBW0essN-ZknZrx-MuUOslHxLxeQHIF20P2ysBDfn5DJMuJ1t3FnPUiV94I-ASN7ea9HzmaRSfewcErrSfNHFxfNqkCBiX0YiwpGJl-F-PD8GfTPz9iTBgYJ4XnwSfqN9_uXaQxlGuMYaLqxobMaSlsSTCwWAJj7kDfhdvqcC-n23-_h1g4VJcHB7xuKYm62xOt-pVB_P-kXeLHgQYeGpJa2-ic4l1TxPNQXAw50hkIMg')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 9,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Chopp Escuro 300ml</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Encorpado, com notas de malte torrado e leve dulçor.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="Large 500ml glass mug filled with cold pilsner draft beer. Heavy condensation on the glass. Thick white foam spilling slightly over the edge. Golden, clear liquid. Set against a dark, moody bar background with warm accent lights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPPa34knFv-XTWke2y-oWaLrxNUxLkn3HZs_G0geCMPHXsy-Yw1YV_gSg3DKyvh48dyhvpiAUgXUfebxILB8CnO42e7LmsHH053_uDLIWJaJOXcL_YpxPj5YEx_CKttDpx0OTOvIZVTHeq3CBSqmTlyh6UJ7LV8UGvpbB447u38pQwuuWgAVB-HspHgVgSasFykuh6eabaI6ds0hCZM5MYRLgHRpoUGSmXGYzmIyG5QgZ78SI8nrxf')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 13,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Chopp Pilsen 500ml</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A dose certa para quem tem sede. Nossa pilsen em tamanho maior.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+</div>
+</div>
+<!-- Category: Chopp de Vinho -->
+<div class="mb-xl scroll-mt-[160px]" id="vinho">
+<div class="flex items-center gap-4 mb-lg">
+<h2 class="font-headline-md text-headline-md text-tertiary uppercase tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wine_bar</span>
+                        Chopp de Vinho
+                    </h2>
+<div class="h-[1px] flex-grow bg-surface-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Item 4 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A 300ml glass filled with a deep reddish-purple wine draft (Chopp de Vinho). Pinkish foam on top. Cold with condensation on the glass. Placed on a wooden table in a dimly lit bar setting. High contrast, rich colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXw2Kjm1qf4Wo0YmvrHW0YF4fQjK9pr-OkXIPeKpQ2D5mDrumpJ0NSnfyT7mUNh7X16C-Cxo1q6df2bGncKiPEM9V4me6ZXDQjo03J2GNf-nUYb1ICiHtuS_4MPjVP342AJg2Lu_sWSEcN_p55SsL40ljJRWI7cTLUmkUtR33pRT_gYgHQWpo19WpawP6DAeAHRMPfZd2hKJ0KdpfC0d4ZbIoPXVXL7JBQ5Iz8f5x77p-4qmsTW1CW')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 10,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Chopp de Vinho 300ml</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A doçura do vinho com a refrescância do chopp.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+</div>
+</div>
+<!-- Category: Petiscos -->
+<div class="mb-xl scroll-mt-[160px]" id="petiscos">
+<div class="flex items-center gap-4 mb-lg">
+<h2 class="font-headline-md text-headline-md text-tertiary uppercase tracking-wide flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">kebab_dining</span>
+                        Petiscos de Bar
+                    </h2>
+<div class="h-[1px] flex-grow bg-surface-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-md">
+<!-- Item 5 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A generous portion of golden, crispy french fries served on a dark rustic plate or wooden board. Sprinkled with coarse salt and herbs. Accompanied by a small ramekin of yellow mustard or mayo sauce. Cozy pub lighting, appetizing food photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAC0Ub-iAy8jJVnZh0Hxo_Q0twYs7qEE7knBFb5tfhh0gLifwEfgWSkRzBEevMSEBVGpKOS373DsMni8ryHP_zzSBnOL3f2XEvnc7mSO49ZI-7VGxuvXJUet4vBgQmWqncCWjMxugdSZsCcXlNZPw-dy7zIfJRVfkgYwaXAce_sU3Sfmc-FvSlHeWxMs42W_aRFggwxAslam1R09ousvXjeLi8kB6GhSUZ9MNmjTHAUsB15_QdxQfTa')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 25,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Porção de Fritas Média</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Batatas fritas crocantes por fora e macias por dentro. Acompanha molho da casa.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+<!-- Item 6 -->
+<article class="boteco-card rounded-lg flex flex-col overflow-hidden h-full">
+<div class="h-48 w-full bg-surface-container-highest relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="Appetizing spread of brazilian bar food: sliced calabresa sausage fried with onions, alongside crispy french fries. Served on a hot iron skillet or dark rustic platter. Steam rising slightly. Warm, inviting pub atmosphere with dark background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzjoApUn6nOXxwpGxXniLfNv5gjfGVO1A-o7tQXH3u2gNyBziSvrJDBDhHYmVOcwvv5ypiR5kkRnV5Cnn-behcairmoEyHqbJ4uWV_lh_FmXC2jC8qBO2khiQqo3zvivVuKxQk_qD3mrUmyTFF4Yl_PKdbT2UD0tIlOJZEDoZdskbHg06o5-TKxxaD5EGYt2hFamzskRLExwqKXYZcQVyqoTwXCXIqvzENOK247yQFH7d_BJxFnmn1')"></div>
+<div class="absolute top-2 right-2 bg-surface-container/80 backdrop-blur px-2 py-1 rounded text-tertiary font-headline-md text-[18px] border border-tertiary/30">
+                                R$ 45,00
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2">Fritas com Calabresa e Acebolado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Porção generosa de fritas coberta com calabresa fatiada e cebola caramelizada na chapa.</p>
+</div>
+<button class="boteco-button w-full py-3 rounded flex items-center justify-center gap-2 font-label-lg text-label-lg uppercase tracking-wider mt-auto">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Pedir via WhatsApp
+                            </button>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (WhatsApp) - Fixed Bottom Right -->
+<a aria-label="Pedir via WhatsApp" class="fixed bottom-lg right-lg z-50 w-16 h-16 rounded-full bg-[#25D366] hover:bg-[#128C7E] flex items-center justify-center shadow-lg hover:-translate-y-1 transition-all duration-300 group hidden md:flex" href="#">
+<span class="material-symbols-outlined text-white text-[32px] group-hover:scale-110 transition-transform">chat</span>
+<span class="absolute right-full mr-4 bg-surface-container-high text-on-surface font-label-md px-3 py-2 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-surface-variant pointer-events-none">
+            Peça agora
+        </span>
+</a>
+<!-- Footer -->
+<footer class="w-full py-lg px-md flex flex-col items-center gap-base mb-xl bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant">
+<h2 class="font-display-lg text-headline-md text-tertiary uppercase tracking-tighter">Chopp D'Casa</h2>
+<div class="flex gap-md my-sm">
+<a class="text-on-surface-variant hover:text-primary underline transition-all duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Localização</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Instagram</a>
+<a class="text-tertiary font-bold hover:text-primary underline transition-all duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">WhatsApp</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Chopp D'Casa © 2024 - Goiânia, GO</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) - Semantic Fallback -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-sm py-xs pb-safe bg-surface-container dark:bg-surface-container border-t-2 border-tertiary md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+<span class="font-label-md text-label-md mt-1">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant p-2 rounded-lg transition-colors" href="#artesanal">
+<span class="material-symbols-outlined text-[24px]">liquor</span>
+<span class="font-label-md text-label-md mt-1">Artesanal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant p-2 rounded-lg transition-colors" href="#drinks">
+<span class="material-symbols-outlined text-[24px]">local_bar</span>
+<span class="font-label-md text-label-md mt-1">Drinks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant p-2 rounded-lg transition-colors" href="#petiscos">
+<span class="material-symbols-outlined text-[24px]">kebab_dining</span>
+<span class="font-label-md text-label-md mt-1">Petiscos</span>
+</a>
+</nav>
+<!-- Spacer for mobile nav -->
+<div class="h-20 md:hidden w-full"></div>
+</body></html>

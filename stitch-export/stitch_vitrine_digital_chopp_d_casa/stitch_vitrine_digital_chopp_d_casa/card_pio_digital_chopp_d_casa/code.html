@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chopp D'Casa - Cardápio Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#c8c6c6",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#fbbc00",
+                        "surface": "#121414",
+                        "primary-container": "#b22222",
+                        "tertiary-fixed-dim": "#fbbc00",
+                        "tertiary-container": "#775700",
+                        "on-tertiary": "#402d00",
+                        "primary": "#ffb4ac",
+                        "on-surface-variant": "#e2beba",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "background": "#121414",
+                        "on-primary-container": "#ffc8c2",
+                        "surface-container-lowest": "#0c0f0f",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-primary-fixed": "#410003",
+                        "inverse-primary": "#b52424",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-background": "#e2e2e2",
+                        "error-container": "#93000a",
+                        "surface-variant": "#333535",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-bright": "#38393a",
+                        "surface-tint": "#ffb4ac",
+                        "error": "#ffb4ab",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "outline-variant": "#5a403e",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#92030f",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-container": "#1e2020",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed": "#e4e2e1",
+                        "secondary-container": "#474747",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-container": "#ffcf66",
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary": "#303030",
+                        "surface-container-low": "#1a1c1c",
+                        "outline": "#aa8986",
+                        "on-primary": "#690007"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "gutter": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Domine", "serif"],
+                        "body-md": ["Work Sans", "sans-serif"],
+                        "headline-lg-mobile": ["Domine", "serif"],
+                        "label-lg": ["Work Sans", "sans-serif"],
+                        "label-md": ["Work Sans", "sans-serif"],
+                        "headline-md": ["Domine", "serif"],
+                        "headline-lg": ["Domine", "serif"],
+                        "body-lg": ["Work Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #333535; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #fbbc00; }
+        
+        .whatsapp-bg { background-color: #25D366; }
+        .whatsapp-text { color: #25D366; }
+        
+        /* Smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-xl">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b-2 border-tertiary fixed top-0 w-full z-50 flex flex-col items-center px-md py-sm max-w-container-max mx-auto shadow-none">
+<div class="flex items-center justify-between w-full">
+<span class="material-symbols-outlined text-tertiary dark:text-tertiary" style="font-variation-settings: 'FILL' 1;">sports_bar</span>
+<h1 class="font-display-lg text-headline-lg-mobile font-bold text-tertiary dark:text-tertiary uppercase tracking-tighter">Chopp D'Casa</h1>
+<span class="material-symbols-outlined text-tertiary dark:text-tertiary">info</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto mt-24 px-md">
+<!-- Header Info Section -->
+<section class="flex flex-col items-center text-center py-lg border-b border-surface-variant mb-md">
+<img alt="Logo Chopp D'Casa" class="w-32 h-32 rounded-full border-2 border-tertiary mb-sm object-cover shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNOWck6uK0m1ZGhO8deAQnvG3EDPYfCN4YsvrYb4Zp8Jjci1gR-OYqjhU3lZFPOrY2cLUEK56DUsyjvzKLhulnvU9ffCHR5QWdTVQDQGQYvo9HmFNm40wwKLfEJLAWdS08wy4Ip7Na9mhSWFKHecQNeWkAsU1IE_EFG00FicSDSIv-xLJ_fTYF9n_-krzrLT4zJIHbfHiBeKOXuOSxe-TyyKn_-EdMOPVWMOXS43iu80Y-HZHsph1O"/>
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-1 rounded-full border border-tertiary/30 mb-sm">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="font-label-lg text-label-lg text-tertiary">Aberto agora</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-sm">
+                Setor Centro Oeste, Goiânia<br/>
+<span class="text-sm">(dentro do Posto Tassara Fama)</span>
+</p>
+<button class="text-tertiary hover:text-primary transition-colors text-sm underline underline-offset-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                Mais informações
+            </button>
+</section>
+<!-- Sticky Category Nav & Search -->
+<div class="sticky top-[72px] z-40 bg-surface/95 backdrop-blur-sm pt-sm pb-md border-b border-surface-variant mb-lg -mx-md px-md">
+<!-- Search -->
+<div class="relative w-full max-w-md mx-auto mb-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container border border-surface-variant rounded-full py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-tertiary transition-colors font-body-md text-sm placeholder:text-on-surface-variant/50" placeholder="Buscar no cardápio..." type="text"/>
+</div>
+<!-- Categories -->
+<div class="flex overflow-x-auto custom-scrollbar gap-sm pb-2 w-full snap-x">
+<a class="snap-start shrink-0 px-4 py-2 rounded-full border border-tertiary bg-surface-container text-tertiary font-label-lg text-label-lg whitespace-nowrap hover:bg-tertiary/10 transition-colors" href="#artesanal">Chopp Artesanal</a>
+<a class="snap-start shrink-0 px-4 py-2 rounded-full border border-surface-variant bg-surface-container text-on-surface font-label-lg text-label-lg whitespace-nowrap hover:border-tertiary hover:text-tertiary transition-colors" href="#vinho">Chopp de Vinho</a>
+<a class="snap-start shrink-0 px-4 py-2 rounded-full border border-surface-variant bg-surface-container text-on-surface font-label-lg text-label-lg whitespace-nowrap hover:border-tertiary hover:text-tertiary transition-colors" href="#drinks">Drinks</a>
+<a class="snap-start shrink-0 px-4 py-2 rounded-full border border-surface-variant bg-surface-container text-on-surface font-label-lg text-label-lg whitespace-nowrap hover:border-tertiary hover:text-tertiary transition-colors" href="#petiscos">Petiscos</a>
+</div>
+</div>
+<!-- Section: Chopp Artesanal -->
+<section class="mb-xl scroll-mt-32" id="artesanal">
+<h2 class="font-headline-md text-headline-md text-tertiary border-b border-tertiary/30 pb-2 mb-md flex items-center gap-2">
+<span class="material-symbols-outlined">sports_bar</span>
+                Chopp Artesanal
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Item 1 -->
+<div class="bg-surface-container-high border border-tertiary/50 rounded-lg overflow-hidden flex flex-col sm:flex-row hover:border-tertiary transition-colors group shadow-md relative">
+<div class="sm:w-1/3 aspect-square sm:aspect-auto">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a frosted glass mug filled with golden Pilsner beer, overflowing with thick white foam, sitting on a dark wooden pub table. The lighting is low and moody, characteristic of a dark mode aesthetic, with a warm amber backlight highlighting the condensation on the glass. The background is deeply shadowed, conveying a cozy, rustic neighborhood bar atmosphere. High contrast, photorealistic, rich colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMwXXAX888pVKFqtK-8Nn1_iiibtl-_KSr0dUXnWJBS9qGqWDuEJkY2KbGS04MNCeuvZxueYQLNcD2m31MHgurB687evc8lUEoWKhnITbIdwJh83o1FwsNUUAYvLM7JXPIVHYghwXwlDZ5meX2-n4E-Lwuza5_6z1XqyuyriMX2aXVTZinE4z8KQcGXROYdX_48AsoiMd6pDkf7zrGwj1uMse-_Fw1SBelB_Hi09xMEzioNcnkxSw-"/>
+</div>
+<div class="p-sm flex flex-col justify-between flex-1">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-[18px] font-bold text-on-surface">Chopp Pilsen 300ml</h3>
+<span class="font-display-lg text-[16px] font-bold text-tertiary whitespace-nowrap">R$ --,--</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Clássico, leve e refrescante. O verdadeiro sabor de boteco.</p>
+</div>
+<button class="w-full bg-primary-container hover:bg-inverse-primary text-white font-label-lg py-2 px-4 rounded border-l-4 border-tertiary transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                            Peça pelo WhatsApp
+                        </button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-high border border-tertiary/50 rounded-lg overflow-hidden flex flex-col sm:flex-row hover:border-tertiary transition-colors group shadow-md relative">
+<div class="sm:w-1/3 aspect-square sm:aspect-auto">
+<img class="w-full h-full object-cover" data-alt="A tall glass of dark Stout beer with a creamy tan head, presented on a slate coaster in a dimly lit, rustic bar setting. A subtle amber spotlight catches the rim of the glass, creating a moody, premium dark mode vibe. The background is a blurred charcoal grey with faint hints of traditional pub decor. High resolution, deep rich blacks and browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCZspUa6Gl4u9Pu0GMlpzTW_2zJfJm9zoUpg9yBC8W3B6E3tUctqUoMTVgxmqz9V73PwKeFp1T00tfb3k9yiY6d6ii0TvXgpeMY1OjVvP8bcVtZko59sdNEm-2NCHnrrAmj0BMmuWvnPKL1_qyEMJKC0o6QAPiSYwoPMT3vOS9aEHz1UrwXtrDKPOF2seWS20n7dXyXuNeaI0gzkutVShn-Qixi9M8VDdjRFUuf-mBgADKbpzg-JST"/>
+</div>
+<div class="p-sm flex flex-col justify-between flex-1">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-md text-[18px] font-bold text-on-surface">Chopp Escuro 300ml</h3>
+<span class="font-display-lg text-[16px] font-bold text-tertiary whitespace-nowrap">R$ --,--</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Maltado com notas de caramelo e café. Encorpado.</p>
+</div>
+<button class="w-full bg-primary-container hover:bg-inverse-primary text-white font-label-lg py-2 px-4 rounded border-l-4 border-tertiary transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                            Peça pelo WhatsApp
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container border-t-2 border-tertiary fixed bottom-0 w-full z-50 flex justify-around items-center px-sm py-xs pb-[env(safe-area-inset-bottom,8px)] md:hidden shadow-none">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-90 transition-transform" href="#artesanal">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="font-label-md text-label-md">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant rounded-lg p-2 transition-colors" href="#artesanal">
+<span class="material-symbols-outlined mb-1">liquor</span>
+<span class="font-label-md text-label-md">Artesanal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant rounded-lg p-2 transition-colors" href="#drinks">
+<span class="material-symbols-outlined mb-1">local_bar</span>
+<span class="font-label-md text-label-md">Drinks</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed-dim hover:bg-surface-variant rounded-lg p-2 transition-colors" href="#petiscos">
+<span class="material-symbols-outlined mb-1">kebab_dining</span>
+<span class="font-label-md text-label-md">Petiscos</span>
+</a>
+</nav>
+</body></html>
